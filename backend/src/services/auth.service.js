@@ -1,7 +1,7 @@
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const pool = require('../config/db');
 const { createToken } = require('../utils/jwt');
-const AppError = require('../utils/appError');
+const AppError = require('../utils/AppError');
 
 async function registerUser ({name, email, password}) {
     if (!name || !email || !password) {

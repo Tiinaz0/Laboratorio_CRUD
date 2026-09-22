@@ -13,17 +13,17 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.get('/api/health', (req, res) => {
-    res.json({ ok: true, message: 'Laboratorio CRUD API funcional' });
+  res.json({ ok: true, message: 'Laboratorio CRUD API funciona!' });
 });
 
 app.use('/api/auth', authRoutes);
 app.use('/api/equipos', equiposRoutes);
 
-app.use((req,res) => {
-    res.status (404).json({
-        ok: false,
-        message: 'Ruta no encontrada'
-    });
+app.use((req, res) => {
+  res.status(404).json({
+    ok: false,
+    message: 'Ruta no encontrada'
+  });
 });
 
 app.use(errorHandler);
