@@ -9,7 +9,7 @@ async function list(req, res, next) {
     }
 }
 
-async function create(req, res, next) {
+async function getById(req, res, next) {
     try {
         const data = await equiposService.createEquipo(req.body, req.file?.filename);
         res.status(201).json({ ok: true, data });
@@ -18,7 +18,7 @@ async function create(req, res, next) {
     }
 }
 
-async function update(req, res, next) {
+async function create(req, res, next) {
     try {
         await equiposService.updateEquipo(req.params.id, req.body, req.file?.filename);
         res.json({ ok: true, message: 'Equipo actualizado' });

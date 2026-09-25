@@ -2,12 +2,12 @@ const path = require('path');
 const multer = require('multer');
 const AppError = require('../utils/AppError');
 
-const UPLOADS_DIR = path.join(__dirname, '..', '..', 'uploads', 'equipos');
+const UPLOAD_DIR = path.join(__dirname, '..', '..', 'uploads', 'equipos');
 const ALLOWED_MIME = ['image/jpeg', 'image/png', 'image/webp'];
 const MAX_SIZE = 2 * 1024 * 1024;
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, UPLOADS_DIR),
+    destination: (req, file, cb) => cb(null, UPLOAD_DIR),
     filename: (req, file, cb) => {
         const ext = path.extname(file.originalname).toLowerCase();
         const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${ext}`;

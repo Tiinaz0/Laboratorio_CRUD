@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const authRoutes = require('./routes/auth.routes');
 const equiposRoutes = require('./routes/equipos.routes');
-const errorHandler = require('./middlewares/error.middleware');
+const errorHandler = require('./middlewares/error.middleaware');
 
 const app = express();
 
